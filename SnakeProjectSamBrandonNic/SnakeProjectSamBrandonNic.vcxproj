@@ -127,13 +127,29 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="SnakeClass.cpp" />
+    <ClCompile Include="Apple.cpp" />
+    <ClCompile Include="AppleGenerator.cpp" />
+    <ClCompile Include="GameManager.cpp" />
+    <ClCompile Include="MapManager.cpp" />
+    <ClCompile Include="MenuManager.cpp" />
+    <ClCompile Include="Random.cpp" />
+    <ClCompile Include="ScoreManager.cpp" />
+    <ClCompile Include="Snake.cpp" />
     <ClCompile Include="SnakeManager.cpp" />
     <ClCompile Include="SnakeProjectSamBrandonNic.cpp" />
+    <ClCompile Include="UiManager.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SnakeClass.h" />
+    <ClInclude Include="Apple.h" />
+    <ClInclude Include="AppleGenerator.h" />
+    <ClInclude Include="GameManager.h" />
+    <ClInclude Include="MapManager.h" />
+    <ClInclude Include="MenuManager.h" />
+    <ClInclude Include="Random.h" />
+    <ClInclude Include="ScoreManager.h" />
+    <ClInclude Include="Snake.h" />
     <ClInclude Include="SnakeManager.h" />
+    <ClInclude Include="UiManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
