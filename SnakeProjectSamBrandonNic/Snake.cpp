@@ -1,4 +1,4 @@
-#include "SnakeClass.h"
+#include "Snake.h"
 
 //Definition get-set for variables
 int SnakeClass::GetBodyLength()
