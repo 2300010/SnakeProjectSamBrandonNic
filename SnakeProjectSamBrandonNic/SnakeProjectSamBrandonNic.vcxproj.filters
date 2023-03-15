@@ -18,5 +18,19 @@
     <ClCompile Include="SnakeProjectSamBrandonNic.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SnakeClass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SnakeManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SnakeClass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SnakeManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
