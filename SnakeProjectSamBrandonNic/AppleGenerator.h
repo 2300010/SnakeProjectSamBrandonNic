@@ -4,5 +4,6 @@
 
 class AppleGenerator
 {
+	int exempleRandomInt = Random::Get().GenIntPositionX();
 };
 
