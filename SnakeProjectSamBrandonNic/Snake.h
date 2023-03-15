@@ -1,9 +1,17 @@
+//Samuel   Creation and structure of the class
+
 #pragma once
 
 #include <iostream>
+#include <string>
 
-class SnakeClass
+class Snake
 {
+	//Declare constants for the snake parts
+	const string HEAD_PART = "H";
+	const string BODY_PART = "B";
+	const string TAIL_PART = "T";
+
 	//Declare variable for properties
 	int bodyLength = 0;
 	float speed = 0;
@@ -11,7 +19,7 @@ class SnakeClass
 public:
 
 	//Declare constructor
-	SnakeClass(int bodyLength, float speed) 
+	Snake(int bodyLength, float speed) 
 	{
 		this->bodyLength = bodyLength;
 		this->speed = speed;

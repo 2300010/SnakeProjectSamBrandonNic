@@ -1,22 +1,24 @@
+//Samuel Creation and definition of the functions
+
 #include "Snake.h"
 
 //Definition get-set for variables
-int SnakeClass::GetBodyLength()
+int Snake::GetBodyLength()
 {
 	return bodyLength;
 }
 
-void SnakeClass::SetBodyLength(int newLength)
+void Snake::SetBodyLength(int newLength)
 {
 	bodyLength = newLength;
 }
 
-int SnakeClass::GetSpeed()
+int Snake::GetSpeed()
 {
 	return speed;
 }
 
-void SnakeClass::SetSpeed(int newSpeed)
+void Snake::SetSpeed(int newSpeed)
 {
 	speed = newSpeed;
 }
