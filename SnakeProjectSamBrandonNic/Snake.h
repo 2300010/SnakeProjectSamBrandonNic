@@ -1,28 +1,27 @@
-//Samuel   Creation and structure of the class
+//Samuel	Creation and structure of the class
 
 #pragma once
 
-#include <iostream>
-#include <string>
+using namespace std;
 
 class Snake
 {
-	//Declare constants for the snake parts
-	const string HEAD_PART = "H";
-	const string BODY_PART = "B";
-	const string TAIL_PART = "T";
-
 	//Declare variable for properties
 	int bodyLength = 0;
-	float speed = 0;
+	float speed = 0.5f;
 
 public:
 
+	//Declare constants for the snake parts and starting length
+	const int STARTING_LENGTH = 10;
+	const char HEAD_PART = 'H';
+	const char BODY_PART = 'B';
+	const char TAIL_PART = 'T';
+
 	//Declare constructor
-	Snake(int bodyLength, float speed) 
+	Snake() 
 	{
-		this->bodyLength = bodyLength;
-		this->speed = speed;
+
 	}
 
 	//Signature of get-set for variables

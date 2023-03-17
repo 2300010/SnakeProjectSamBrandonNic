@@ -1,24 +1,53 @@
-//Samuel Creation and definition of the functions
+//Samuel	Coding of the definitions of the getters and setters
 
 #include "Snake.h"
 
-//Definition get-set for variables
+//Definitions get-set for variables
 int Snake::GetBodyLength()
 {
-	return bodyLength;
+	try
+	{
+		return bodyLength;
+	}
+	catch (...)
+	{
+		
+	}
 }
 
 void Snake::SetBodyLength(int newLength)
 {
-	bodyLength = newLength;
+	try
+	{
+		bodyLength = newLength;
+
+	}
+	catch (...)
+	{
+
+	}
 }
 
 int Snake::GetSpeed()
 {
-	return speed;
+	try
+	{
+		return speed;
+	}
+	catch (...)
+	{
+
+	}
 }
 
 void Snake::SetSpeed(int newSpeed)
 {
-	speed = newSpeed;
+	try
+	{
+		speed = newSpeed;
+	}
+	catch (...)
+	{
+
+	}
 }

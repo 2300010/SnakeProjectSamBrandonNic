@@ -1,15 +1,34 @@
-//Samuel   Creation and structure of the class
+//Samuel	Creation and structure of the class
 
 #pragma once
 
-#include <vector>
 #include "Snake.h"
-
-using namespace std;
+#include <vector>
 
 class SnakeManager
 {
+	
+
+public:
+	//Declare object of snake class
+	Snake mySnake;
+
 	//Declare vector to receive the parts of the snake
+	vector<char> snakeParts;
+
+	//Declare constructor
+	SnakeManager() 
+	{
+
+	}
+	
+	//SIGNATURE OF METHODS
+	//Sets the snake to starting values
+	void SetupStartingSnake();
+
+	//Adds a body part to the snake
+	void AddBodyPart();
+
 
 };
 
