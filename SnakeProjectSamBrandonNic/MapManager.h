@@ -1,27 +1,35 @@
+//Samuel	Structure of the class
 #pragma once
-#include "MapManager.h"
-#include "Apple.h"
+#include "AppleGenerator.h"
 #include "SnakeManager.h"
 
 
 class MapManager
 {
-	SnakeManager snakeManager;
-	Apple apple;
-	int xLimit;
-	int yLimit;
+	//Declare objects of other classes
+	SnakeManager mySnakeManager;
 
-public :
+	//Declare constants to receive screen dimensions
+	static const int SCREEN_HEIGHT = 40;
+	static const int SCREEN_WIDTH = 40;
 
-	//instantiate MapManager and Spawn an apple
-	MapManager(int xLimit,int yLimit);
+public:
 
-	bool checkSnakeHeadCollisionWithTail();
+	//Create a 2D char array to represent the screen
+	char map[SCREEN_HEIGHT][SCREEN_WIDTH];
 
-	bool checkSnakeHeadCollisionWithApple();
+	//Declare constructor
+	MapManager();
 
-	
+	//GETTERS AND SETTERS
+	int GetMapHeight();
+	int GetMapWidth();
 
+	//SIGNATURE OF METHODS
+	//Initiates the map
+	void InitMap();
 
+	//Set the snake starting position
+	void SetSnakePosition(SnakeManager snakeManager);
 };
 

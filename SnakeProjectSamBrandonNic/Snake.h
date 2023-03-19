@@ -13,6 +13,7 @@ class Snake
 	int headPositionX = 0;
 	int headPositionY = 0;
 
+	//Declare direction variable for the snake
 	Direction snakeDirection;
 
 public:
