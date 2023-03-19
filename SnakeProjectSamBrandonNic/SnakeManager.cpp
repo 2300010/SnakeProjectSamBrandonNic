@@ -1,4 +1,4 @@
-//Samuel	Coding SetupStartingSnake and AddBodyPart
+//Samuel	Coding of methods SetupStartingSnake and AddBodyPart
 
 #include "SnakeManager.h"
 
@@ -8,22 +8,21 @@ void SnakeManager::SetupStartingSnake()
 {
 	try
 	{
-		//Set length of the snake
+		const int SCREEN_WIDTH = 100;  //A REMPLACER ********************
+		const int SCREEN_HEIGHT = 100; //A REMPLACER ********************
+
+		//Set starting length, direction and position of the snake
 		mySnake.SetBodyLength(mySnake.STARTING_LENGTH);
+		mySnake.SetSnakeDirection(mySnake.STARTING_DIRECTION);
+		mySnake.SetHeadPositionX(SCREEN_WIDTH / 2);
+		mySnake.SetHeadPositionY(SCREEN_HEIGHT / 2);
 
 		//Fill vector with starting body parts
 		for (int i = 0; i < mySnake.STARTING_LENGTH; i++)
 		{
 			if (snakeParts.size() != 0)
 			{
-				if (i < 9)
-				{
-					snakeParts.push_back(mySnake.BODY_PART);
-				}
-				else
-				{
-					snakeParts.push_back(mySnake.TAIL_PART);
-				}
+				snakeParts.push_back(mySnake.BODY_PART);
 			}
 			else
 			{
@@ -43,7 +42,7 @@ void SnakeManager::AddBodyPart()
 	try
 	{
 		//Insert body part to the second index 
-		snakeParts.insert(snakeParts.end() - 1, mySnake.BODY_PART);
+		snakeParts.push_back(mySnake.BODY_PART);
 
 		//Set new size of the snake
 		mySnake.SetBodyLength(snakeParts.size());

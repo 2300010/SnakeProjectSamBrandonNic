@@ -1,140 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
+    <ClCompile Include="Apple.cpp" />
+    <ClCompile Include="AppleGenerator.cpp" />
+    <ClCompile Include="GameManager.cpp" />
+    <ClCompile Include="MapManager.cpp" />
+    <ClCompile Include="MenuManager.cpp" />
+    <ClCompile Include="Random.cpp" />
+    <ClCompile Include="ScoreManager.cpp" />
+    <ClCompile Include="Snake.cpp" />
+    <ClCompile Include="SnakeManager.cpp" />
+    <ClCompile Include="SnakeProjectSamBrandonNic.cpp" />
+    <ClCompile Include="UiManager.cpp" />
+    <ClCompile Include="Direction.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="SnakeProjectSamBrandonNic.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-<<<<<<< HEAD
-    <ClCompile Include="Snake.cpp">
-=======
-    <ClCompile Include="SnakeManager.cpp">
->>>>>>> 49126799da6d0e03aea8b3810ab4456c71d590b5
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Apple.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="AppleGenerator.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GameManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MapManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MenuManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Random.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ScoreManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Snake.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="UiManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Apple.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="AppleGenerator.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GameManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MapManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MenuManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Random.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ScoreManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="UiManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-<<<<<<< HEAD
-    <ClInclude Include="Snake.h">
-=======
-    <ClInclude Include="SnakeManager.h">
->>>>>>> 49126799da6d0e03aea8b3810ab4456c71d590b5
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Apple.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="AppleGenerator.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GameManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MapManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MenuManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Random.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ScoreManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Snake.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="UiManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Apple.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="AppleGenerator.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GameManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MapManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MenuManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Random.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ScoreManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="UiManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <ClInclude Include="Apple.h" />
+    <ClInclude Include="AppleGenerator.h" />
+    <ClInclude Include="GameManager.h" />
+    <ClInclude Include="MapManager.h" />
+    <ClInclude Include="MenuManager.h" />
+    <ClInclude Include="Random.h" />
+    <ClInclude Include="ScoreManager.h" />
+    <ClInclude Include="Snake.h" />
+    <ClInclude Include="SnakeManager.h" />
+    <ClInclude Include="UiManager.h" />
   </ItemGroup>
 </Project>

@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="Apple.cpp" />
     <ClCompile Include="AppleGenerator.cpp" />
+    <ClCompile Include="Direction.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="MapManager.cpp" />
     <ClCompile Include="MenuManager.cpp" />

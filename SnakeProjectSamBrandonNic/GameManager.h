@@ -1,16 +1,26 @@
-//Nicolas	Creation de la classe
-//Samuel	Strucutre de la classe
+//Nicolas	Creation of the classe
+//Samuel	Structure of the classe
 
 #pragma once
 
+#include <conio.h>
 #include "Snake.h"
 #include "SnakeManager.h"
 
 
 class GameManager
 {
+	//Declare object of snakeManager
+	SnakeManager mySnakeManager;
+
+	//Declare variable to verify if the player is in a game or not
+	bool isPlaying = false;
 
 public:
+
+	//GETTERS AND SETTERS
+	bool GetIsPlaying();
+	void SetIsPlaying(bool isPlaying);
 
 	//SIGNATURES OF THE METHODS
 	//Input manager
@@ -19,7 +29,10 @@ public:
 	//Detects collisions of the snake
 	void OnCollision();
 
-	//
+	//Moves the snake
+	void MoveSnake();
 
+	//Generates the timer
+	void TimeGenerator();
 };
 

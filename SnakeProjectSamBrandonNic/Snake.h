@@ -1,6 +1,7 @@
 //Samuel	Creation and structure of the class
 
 #pragma once
+#include "Direction.cpp"
 
 using namespace std;
 
@@ -9,14 +10,18 @@ class Snake
 	//Declare variable for properties
 	int bodyLength = 0;
 	float speed = 0.5f;
+	int headPositionX = 0;
+	int headPositionY = 0;
+
+	Direction snakeDirection;
 
 public:
 
 	//Declare constants for the snake parts and starting length
 	const int STARTING_LENGTH = 10;
+	const Direction STARTING_DIRECTION = RIGHT;
 	const char HEAD_PART = 'H';
 	const char BODY_PART = 'B';
-	const char TAIL_PART = 'T';
 
 	//Declare constructor
 	Snake() 
@@ -28,7 +33,16 @@ public:
 	int GetBodyLength();
 	void SetBodyLength(int newLength);
 
-	int GetSpeed();
-	void SetSpeed(int newSpeed);
+	float GetSpeed();
+	void SetSpeed(float newSpeed);
+
+	int GetHeadPositionX();
+	void SetHeadPositionX(int headX);
+
+	int GetHeadPositionY();
+	void SetHeadPositionY(int headY);
+
+	Direction GetSnakeDirection();
+	void SetSnakeDirection(Direction newDirection);
 };
 
