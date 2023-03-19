@@ -4,18 +4,15 @@
 
 //DEFITION OF METHODS
 //Method that sets the snake to strating values
-void SnakeManager::SetupStartingSnake()
+void SnakeManager::SetupStartingSnake(int mapHeight, int mapWidth)
 {
 	try
 	{
-		const int SCREEN_WIDTH = 100;  //A REMPLACER ********************
-		const int SCREEN_HEIGHT = 100; //A REMPLACER ********************
-
 		//Set starting length, direction and position of the snake
 		mySnake.SetBodyLength(mySnake.STARTING_LENGTH);
 		mySnake.SetSnakeDirection(mySnake.STARTING_DIRECTION);
-		mySnake.SetHeadPositionX(SCREEN_WIDTH / 2);
-		mySnake.SetHeadPositionY(SCREEN_HEIGHT / 2);
+		mySnake.SetHeadPositionX(mapWidth / 2);
+		mySnake.SetHeadPositionY(mapHeight / 2);
 
 		//Fill vector with starting body parts
 		for (int i = 0; i < mySnake.STARTING_LENGTH; i++)

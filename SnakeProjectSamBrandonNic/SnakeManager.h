@@ -7,8 +7,6 @@
 
 class SnakeManager
 {
-	
-
 public:
 	//Declare object of snake class
 	Snake mySnake;
@@ -24,7 +22,7 @@ public:
 	
 	//SIGNATURE OF METHODS
 	//Sets the snake to starting values
-	void SetupStartingSnake();
+	void SetupStartingSnake(int mapHeight, int mapWidth);
 
 	//Adds a body part to the snake
 	void AddBodyPart();

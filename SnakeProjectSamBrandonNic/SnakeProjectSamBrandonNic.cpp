@@ -7,40 +7,35 @@
 #include "SnakeManager.h"
 #include "Snake.h"
 #include "GameManager.h"
+#include "MapManager.h"
 
 using namespace std;
 
-void SnakeTest();
-void PrintSnake(SnakeManager mySnakeManager);
+void DrawMap(MapManager myMapManager);
 
 int main()
 {
     try
     {
-        GameManager myGameManager;
-        /*while (myGameManager.GetIsPlaying() == true)
-        {
-
-        }*/
-        SnakeTest();
-    }
-    catch (...)
-    {
-
-    }
-}
-
-void SnakeTest()
-{
-    try
-    {
+        //Declare object of MapManager
+        MapManager myMapManager;
         SnakeManager mySnakeManager;
+        Snake mySnake;
 
-        mySnakeManager.SetupStartingSnake();
+        myMapManager.InitMap();
 
-        PrintSnake(mySnakeManager);
+        mySnakeManager.SetupStartingSnake(myMapManager.GetMapHeight(), myMapManager.GetMapWidth());
 
-        system("Pause");
+        myMapManager.SetSnakePosition(mySnakeManager);
+
+        while (true)
+        {
+            
+            DrawMap(myMapManager);
+
+            system("Pause");
+        }
+        //GameManager myGameManager;
     }
     catch (...)
     {
@@ -48,17 +43,17 @@ void SnakeTest()
     }
 }
 
-void PrintSnake(SnakeManager mySnakeManager) 
+//Draws the map
+void DrawMap(MapManager myMapManager)
 {
-    try
+    //Loop on X and on Y of the map array to print the map
+    for (int i = 0; i < myMapManager.GetMapHeight(); i++)
     {
-        for (int i = 0; i < mySnakeManager.mySnake.GetBodyLength(); i++)
+        for (int j = 0; j < myMapManager.GetMapWidth(); j++)
         {
-            cout << mySnakeManager.snakeParts[i];
+            //Prints the character at said position
+            cout << myMapManager.map[i][j];
         }
-    }
-    catch (...)
-    {
-
+        cout << endl;
     }
 }

@@ -16,11 +16,11 @@ void Apple::Spawn()
 }
 
 // Check if the apple collides with the snake
-bool Apple::CheckCollision(const Snake& snake) const
-{
-    // Check if the x and y positions of the apple match the x and y positions of the snake's head
-    return (snake.GetX() == m_x && snake.GetY() == m_y);
-}
+//bool Apple::CheckCollision(const Snake snake) const
+//{
+//    // Check if the x and y positions of the apple match the x and y positions of the snake's head
+//    return (snake.GetX() == m_x && snake.GetY() == m_y);
+//}
 
 // Get the x position of the apple
 int Apple::GetX() const

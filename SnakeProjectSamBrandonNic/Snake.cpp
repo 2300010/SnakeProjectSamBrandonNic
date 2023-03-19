@@ -2,6 +2,7 @@
 
 #include "Snake.h"
 
+
 //Definitions get-set for variables
 int Snake::GetBodyLength()
 {
