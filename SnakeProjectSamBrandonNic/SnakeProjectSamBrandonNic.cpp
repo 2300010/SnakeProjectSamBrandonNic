@@ -6,6 +6,7 @@
 
 #include "SnakeManager.h"
 #include "Snake.h"
+#include "GameManager.h"
 
 using namespace std;
 
@@ -16,6 +17,11 @@ int main()
 {
     try
     {
+        GameManager myGameManager;
+        /*while (myGameManager.GetIsPlaying() == true)
+        {
+
+        }*/
         SnakeTest();
     }
     catch (...)
@@ -32,13 +38,7 @@ void SnakeTest()
 
         mySnakeManager.SetupStartingSnake();
 
-        cout << "\n\n\n\n\n\t";
-
-        mySnakeManager.AddBodyPart();
-
         PrintSnake(mySnakeManager);
-
-        cout << "\n\t" << mySnakeManager.mySnake.GetBodyLength() << "\n";
 
         system("Pause");
     }
