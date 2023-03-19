@@ -4,6 +4,18 @@
 
 class AppleGenerator
 {
-	int exempleRandomInt = Random::Get().GenIntPositionX();
+	bool isAppleInMap = false;
+	int mapXlimit = 0 ;
+	int mapYlimit = 0 ;
+
+public :
+
+	AppleGenerator(int mapXlimit, int mapYlimit);
+
+	bool getIsAppleInMap();
+
+	void genApple();
+
 };
+
 

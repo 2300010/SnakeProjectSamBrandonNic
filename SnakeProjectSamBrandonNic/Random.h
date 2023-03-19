@@ -5,8 +5,6 @@
 class Random
 {
 	private:
-        int MAX_X = 100;
-        int MAX_Y = 100;
 		Random(){}
 
 	public:
@@ -24,12 +22,9 @@ class Random
             srand(time(NULL));
         }
 
-        int GenIntPositionX() {
-            return rand() % MAX_X;
+        int GenInt(int max) {
+            return rand() % max;
         }
 
-        int GenIntPositionY() {
-            return rand() % MAX_Y;
-        }
 };
 
