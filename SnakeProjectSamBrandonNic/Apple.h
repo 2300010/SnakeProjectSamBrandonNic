@@ -5,12 +5,13 @@
 // Apple class representing the apple that the snake can eat
 class Apple
 {
+
 public:
     // Constructor to initialize the apple and spawn it randomly
     Apple();
 
     // Spawn the apple at a random position
-    void Spawn();
+    void Spawn(int xLimit, int yLimit);
 
     // Check if the apple collides with the snake
     bool CheckCollision(const Snake& snake) const;

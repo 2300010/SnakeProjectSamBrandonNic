@@ -1,25 +1,26 @@
 #include "Apple.h"
 #include "AppleGenerator.h"
+#include "Snake.h"
 
-// Constructor to initialize the apple and spawn it randomly
+// Constructor to initialize the apple 
 Apple::Apple()
 {
-    Spawn();
+
 }
 
 // Spawn the apple at a random position
-void Apple::Spawn()
+void Apple::Spawn(int xLimit, int yLimit)
 {
     // Generate a random x and y position for the apple using the AppleGenerator class
-    m_x = AppleGenerator::Get().GenIntPositionX();
-    m_y = AppleGenerator::Get().GenIntPositionY();
+    m_x = Random::Get().GenInt(xLimit);
+    m_y = Random::Get().GenInt(yLimit);
 }
 
 // Check if the apple collides with the snake
 bool Apple::CheckCollision(const Snake& snake) const
 {
     // Check if the x and y positions of the apple match the x and y positions of the snake's head
-    return (snake.GetX() == m_x && snake.GetY() == m_y);
+    return (snake.GetHeadPositionX() == m_x && snake.GetHeadPositionY() == m_y);
 }
 
 // Get the x position of the apple
