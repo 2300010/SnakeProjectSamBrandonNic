@@ -2,6 +2,7 @@
 
 #pragma once
 #include "Direction.cpp"
+#include "vector"
 
 using namespace std;
 

@@ -42,22 +42,22 @@ void GameManager::InputManager()
 			if (keyPressed == 72) //Verify if keyPressed is equal to the ASCII code of UP
 			{
 				//Set the direction of the snake to up
-				mySnakeManager.mySnake.SetSnakeDirection(UP);
+				myMapManager.mySnakeManager.mySnake.SetSnakeDirection(UP);
 			}
 			else if (keyPressed == 80) //Verify if keyPressed is equal to the ASCII code of DOWN
 			{
 				//Set the direction of the snake to down
-				mySnakeManager.mySnake.SetSnakeDirection(DOWN);
+				myMapManager.mySnakeManager.mySnake.SetSnakeDirection(DOWN);
 			}
 			else if (keyPressed == 75) //Verify if keyPressed is equal to the ASCII code of LEFT
 			{
 				//Set the direction of the snake to left
-				mySnakeManager.mySnake.SetSnakeDirection(LEFT);
+				myMapManager.mySnakeManager.mySnake.SetSnakeDirection(LEFT);
 			}
 			else if (keyPressed == 77) //Verify if keyPressed is equal to the ASCII code of RIGHT
 			{
 				//Set the direction of the snake to right
-				mySnakeManager.mySnake.SetSnakeDirection(RIGHT);
+				myMapManager.mySnakeManager.mySnake.SetSnakeDirection(RIGHT);
 			}
 		}
 	}
@@ -70,32 +70,7 @@ void GameManager::InputManager()
 //Method that detects collisions of the snake
 void GameManager::OnCollision() 
 {
-	try
-	{
-		const int SCREEN_WIDTH = 100;  //A REMPLACER ********************
-		const int SCREEN_HEIGHT = 100; //A REMPLACER ********************
-
-		const int APPLE_X = 20; //A REMPLACER ********************
-		const int APPLE_Y = 20; //A REMPLACER ********************
-
-		//Verify if there is a collision with the screen or a body part
-		if (mySnakeManager.mySnake.GetHeadPositionX() < 0 || mySnakeManager.mySnake.GetHeadPositionX() >= SCREEN_WIDTH 
-			|| mySnakeManager.mySnake.GetHeadPositionX() < 0 || mySnakeManager.mySnake.GetHeadPositionX() >= SCREEN_HEIGHT)
-		{
-			//Set isPlaying to false;
-			SetIsPlaying(false);
-		}//Verify if there is a collision with an apple
-		else if (mySnakeManager.mySnake.GetHeadPositionX() == APPLE_X 
-			&& mySnakeManager.mySnake.GetHeadPositionY() == APPLE_Y)
-		{
-			//Add a body part to the snake
-			mySnakeManager.AddBodyPart();
-		}
-	}
-	catch (...)
-	{
-
-	}
+	
 }
 
 //Method that moves the snake
@@ -103,16 +78,27 @@ void GameManager::MoveSnake()
 {
 	try
 	{
-		//if()
+		// if snake eats itself : game over
+		if (myMapManager.CheckSnakeHeadCollisionWithBody()) {
+			GameOver();
+		}
+		// if snake eats apple : spawn new apple and move
+		else if (myMapManager.CheckSnakeHeadCollisionWithApple()) {
+			myMapManager.SnakeEatsApple();
+		}
+		//else snake moves
+		else {
+			myMapManager.MoveSnake(myMapManager.CheckSnakeHeadCollisionWithScreen());
+		}
 	}
-	catch (...)
+	catch (const std::exception&)
 	{
 
 	}
 }
 
 //Method that generates the timer
-void TimeGenerator() 
+void GameManager::TimeGenerator() 
 {
 	try
 	{
@@ -122,4 +108,9 @@ void TimeGenerator()
 	{
 
 	}
+}
+
+
+void GameManager::GameOver() {
+
 }

@@ -4,15 +4,13 @@
 #pragma once
 
 #include <conio.h>
-#include "Snake.h"
-#include "SnakeManager.h"
+#include "MapManager.h"
 
 
 class GameManager
 {
 	//Declare object of snakeManager
-	SnakeManager mySnakeManager;
-
+	MapManager myMapManager;
 	//Declare variable to verify if the player is in a game or not
 	bool isPlaying = false;
 
@@ -34,5 +32,8 @@ public:
 
 	//Generates the timer
 	void TimeGenerator();
+
+	//Actions for when game is over
+	void GameOver();
 };
 

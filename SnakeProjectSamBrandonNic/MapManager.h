@@ -2,23 +2,26 @@
 #pragma once
 #include "AppleGenerator.h"
 #include "SnakeManager.h"
+#include "Apple.h"
 
 
 class MapManager
 {
-	//Declare objects of other classes
-	SnakeManager mySnakeManager;
+	
 
 	//Declare constants to receive screen dimensions
 	static const int SCREEN_HEIGHT = 40;
 	static const int SCREEN_WIDTH = 40;
 
 public:
+	//Declare objects of other classes
+	Apple myApple;
+	SnakeManager mySnakeManager;
 
 	//Create a 2D char array to represent the screen
 	char map[SCREEN_HEIGHT][SCREEN_WIDTH];
 
-	//Declare constructor
+	//Declare constructor, init snake starting position and first apple
 	MapManager();
 
 	//GETTERS AND SETTERS
@@ -30,6 +33,24 @@ public:
 	void InitMap();
 
 	//Set the snake starting position
-	void SetSnakePosition(SnakeManager snakeManager);
+	void SetSnakePosition();
+
+	//handle all collisions in order : screen, body, apple
+	bool handleCollisions();
+
+	//Check collisions 
+	bool CheckSnakeHeadCollisionWithScreen();
+	bool CheckSnakeHeadCollisionWithBody();
+	bool CheckSnakeHeadCollisionWithApple();
+	bool CheckAppleSpawnCollision();
+
+	void MoveSnake();
+
+	void SnakeEatsApple();
+
+
+	void UpdateSnakeNextPosition();
+
+	void GameOver();
 };
 
