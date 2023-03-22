@@ -7,16 +7,16 @@
 
 class MapManager
 {
-	
-
 	//Declare constants to receive screen dimensions
 	static const int SCREEN_HEIGHT = 40;
 	static const int SCREEN_WIDTH = 40;
+
 
 public:
 	//Declare objects of other classes
 	Apple myApple;
 	SnakeManager mySnakeManager;
+
 
 	//Create a 2D char array to represent the screen
 	char map[SCREEN_HEIGHT][SCREEN_WIDTH];
@@ -33,24 +33,19 @@ public:
 	void InitMap();
 
 	//Set the snake starting position
-	void SetSnakePosition();
-
-	//handle all collisions in order : screen, body, apple
-	bool handleCollisions();
+	void SetSnakePosition(SnakeManager sm);
 
 	//Check collisions 
-	bool CheckSnakeHeadCollisionWithScreen();
 	bool CheckSnakeHeadCollisionWithBody();
 	bool CheckSnakeHeadCollisionWithApple();
-	bool CheckAppleSpawnCollision();
+	bool CheckAppleSpawn();
 
 	void MoveSnake();
 
 	void SnakeEatsApple();
 
+	void NewApple();
 
 	void UpdateSnakeNextPosition();
-
-	void GameOver();
 };
 

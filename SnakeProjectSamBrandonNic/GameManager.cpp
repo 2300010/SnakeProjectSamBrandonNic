@@ -67,14 +67,8 @@ void GameManager::InputManager()
 	}
 }
 
-//Method that detects collisions of the snake
-void GameManager::OnCollision() 
-{
-	
-}
-
 //Method that moves the snake
-void GameManager::MoveSnake() 
+void GameManager::Play() 
 {
 	try
 	{
@@ -85,10 +79,11 @@ void GameManager::MoveSnake()
 		// if snake eats apple : spawn new apple and move
 		else if (myMapManager.CheckSnakeHeadCollisionWithApple()) {
 			myMapManager.SnakeEatsApple();
+			applesEaten++;
 		}
 		//else snake moves
 		else {
-			myMapManager.MoveSnake(myMapManager.CheckSnakeHeadCollisionWithScreen());
+			myMapManager.MoveSnake();
 		}
 	}
 	catch (const std::exception&)

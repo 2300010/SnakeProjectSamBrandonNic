@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 
-
+//Singleton to get Random Value : Nicolas
 class Random
 {
 	private:
