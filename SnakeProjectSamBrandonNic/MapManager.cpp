@@ -6,6 +6,8 @@
 //Declare empty constructor
 MapManager::MapManager() 
 {
+	SetScreenDimensions();
+	map[GetMapHeight()][GetMapWidth()];
 	InitMap();
 	myApple.Spawn(SCREEN_WIDTH, SCREEN_HEIGHT);
 }
@@ -13,12 +15,12 @@ MapManager::MapManager()
 //GETTERS AND SETTERS
 int MapManager::GetMapHeight()
 {
-	return SCREEN_HEIGHT;
+	return screenHeight;
 }
 
 int MapManager::GetMapWidth() 
 {
-	return SCREEN_WIDTH;
+	return screenWidth;
 }
 
 //DEFINITION OF METHODS
@@ -34,8 +36,18 @@ void MapManager::InitMap()
 	}
 }
 
+//Set screen dimension
+void MapManager::SetScreenDimensions()
+{
+	HWND hwnd = GetForegroundWindow();
+	RECT rect;
+	GetWindowRect(hwnd, &rect);
+	screenWidth = rect.right - rect.left;
+	screenHeight = rect.bottom - rect.top;
+}
+
 //Set the snake starting position
-void MapManager::SetSnakePosition()
+void MapManager::SetSnakePosition(SnakeManager mySnakeManager)
 {
 	//Set the position of the body of the snake
 	for (int i = 0; i < mySnakeManager.snakeParts.size(); i++)
@@ -166,8 +178,6 @@ bool MapManager::CheckSnakeHeadCollisionWithBody() {
 	}
 }
 
-
-
 // TO DO : update with next position variable instead 
 bool MapManager::CheckSnakeHeadCollisionWithApple() {
 	try
@@ -244,10 +254,10 @@ bool MapManager::CheckAppleSpawnCollision() {
 } 
 */
 
-void MapManager::MoveSnake() {
-	mySnakeManager.Move();
-	UpdateSnakeNextPosition();
-}
+//void MapManager::MoveSnake() {
+//	mySnakeManager.Move();
+//	UpdateSnakeNextPosition();
+//}
 
 
 void MapManager::SnakeEatsApple(){
@@ -296,7 +306,7 @@ void MapManager::UpdateSnakeNextPosition() {
 			}
 		}
 	}
-	catch (const std::exception&)
+	catch (...)
 	{
 
 	}

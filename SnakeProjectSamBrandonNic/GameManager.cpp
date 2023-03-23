@@ -88,7 +88,8 @@ void GameManager::MoveSnake()
 		}
 		//else snake moves
 		else {
-			myMapManager.MoveSnake(myMapManager.CheckSnakeHeadCollisionWithScreen());
+			//myMapManager.MoveSnake(myMapManager.CheckSnakeHeadCollisionWithScreen());
+			myMapManager.mySnakeManager.Move();
 		}
 	}
 	catch (const std::exception&)

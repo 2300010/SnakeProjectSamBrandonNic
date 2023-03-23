@@ -34,6 +34,8 @@ int main()
             DrawMap(myMapManager);
 
             system("Pause");
+
+            mySnakeManager.Move();
         }
         //GameManager myGameManager;
     }
