@@ -15,6 +15,7 @@ class GameManager
 	bool isPlaying = false;
 
 public:
+	int applesEaten = 0;
 
 	//GETTERS AND SETTERS
 	bool GetIsPlaying();
@@ -24,11 +25,8 @@ public:
 	//Input manager
 	void InputManager();
 
-	//Detects collisions of the snake
-	void OnCollision();
-
 	//Moves the snake
-	void MoveSnake();
+	void Play();
 
 	//Generates the timer
 	void TimeGenerator();

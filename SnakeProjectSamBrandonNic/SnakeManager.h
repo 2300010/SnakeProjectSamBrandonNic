@@ -11,23 +11,18 @@ public:
 	//Declare object of snake class
 	Snake mySnake;
 
-	//Declare next position as [0] == X && [1] == Y
+	//Declare next position as [0] == Y ( HEIGHT ) && [1] == X (WIDTH)
 	//TO DO : update to fit with starting snake head position and direction
 	vector<int> nextPosition = {0,0};
 
 	//Declare vector to receive the parts of the snake
 	vector<char> snakeParts;
-
-	//Declare vector to access every body part position, tail is but not head 
+	
+	//Storing every snake body position, including head 
 	vector<vector<int>> snakeBodyPositions;
 
-
-
 	//Declare constructor
-	SnakeManager() 
-	{
-
-	}
+	SnakeManager() {}
 	
 	//SIGNATURE OF METHODS
 	//Sets the snake to starting values
@@ -36,9 +31,7 @@ public:
 	//Adds a body part to the snake
 	void Grow();
 	
-	//Get next head position related to direction
-	
-	void Move();
+
 
 
 };

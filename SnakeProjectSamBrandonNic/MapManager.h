@@ -26,6 +26,7 @@ public:
 	Apple myApple;
 	SnakeManager mySnakeManager;
 
+
 	//Create a 2D char array to represent the screen
 	char map[0][1];
 
@@ -46,22 +47,17 @@ public:
 	//Set the snake starting position
 	void SetSnakePosition(SnakeManager mySnakeManager);
 
-	//handle all collisions in order : screen, body, apple
-	bool handleCollisions();
-
 	//Check collisions 
-	bool CheckSnakeHeadCollisionWithScreen();
 	bool CheckSnakeHeadCollisionWithBody();
 	bool CheckSnakeHeadCollisionWithApple();
-	bool CheckAppleSpawnCollision();
+	bool CheckAppleSpawn();
 
 	void MoveSnake();
 
 	void SnakeEatsApple();
 
+	void NewApple();
 
 	void UpdateSnakeNextPosition();
-
-	void GameOver();
 };
 

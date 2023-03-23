@@ -3,7 +3,8 @@
 #include "SnakeManager.h"
 
 //DEFITION OF METHODS
-//Method that sets the snake to strating values
+// 
+//Method that sets the snake to stating values : Sam et Nicolas
 void SnakeManager::SetupStartingSnake(int mapHeight, int mapWidth)
 {
 	try
@@ -15,15 +16,22 @@ void SnakeManager::SetupStartingSnake(int mapHeight, int mapWidth)
 		mySnake.SetHeadPositionY(mapHeight / 2);
 
 		//Fill vector with starting body parts
-		for (int i = 0; i < mySnake.STARTING_LENGTH; i++)
+		//Begining of vector is always the head
+		for (int i = 0; i < mySnake.STARTING_LENGTH ; i++)
 		{
+			vector<int> temp = { mySnake.GetHeadPositionY(), mySnake.GetHeadPositionX() - i};
 			if (snakeParts.size() != 0)
 			{
+				// Building and storing vector with positions, starting from the tail
+				snakeBodyPositions.push_back(temp);
 				snakeParts.push_back(mySnake.BODY_PART);
 			}
 			else
 			{
 				snakeParts.push_back(mySnake.HEAD_PART);
+				snakeBodyPositions.at(0).at(0) = mySnake.GetHeadPositionY();
+				snakeBodyPositions.at(0).at(1) = mySnake.GetHeadPositionX();
+				snakeBodyPositions.push_back(temp);
 			}
 		}
 	}
@@ -33,7 +41,7 @@ void SnakeManager::SetupStartingSnake(int mapHeight, int mapWidth)
 	}
 }
 
-//Method that adds a body part to the snake parts vector and update parts positions
+//Method that adds a body part to the snake parts vector and update parts positions : Sam et Nicolas
 void SnakeManager::Grow()
 {
 	try
@@ -41,16 +49,19 @@ void SnakeManager::Grow()
 		//Insert body part to the second index 
 		snakeParts.push_back(mySnake.BODY_PART);
 
-		//Update snake body positions (new body part where head is currently located)
-		vector<int> head = { mySnake.GetHeadPositionX(),mySnake.GetHeadPositionY() };
-		snakeBodyPositions.insert(snakeBodyPositions.begin(),head);
+		// Add new position after head in body position vector
+		vector<int> temp = { mySnake.GetHeadPositionY(), mySnake.GetHeadPositionX()};
+		snakeBodyPositions.insert(snakeBodyPositions.begin() + 1, temp);
 
 		//Update new head position
-		mySnake.SetHeadPositionX(nextPosition.at(0));
-		mySnake.SetHeadPositionY(nextPosition.at(1));
+		mySnake.SetHeadPositionY(nextPosition.at(0));
+		mySnake.SetHeadPositionX(nextPosition.at(1));
+		snakeBodyPositions.at(0)[0] = mySnake.GetHeadPositionY();
+		snakeBodyPositions.at(0)[1] = mySnake.GetHeadPositionX();
 
 		//Set new size of the snake
 		mySnake.SetBodyLength(snakeParts.size());
+
 	}
 	catch (...)
 	{
@@ -58,12 +69,3 @@ void SnakeManager::Grow()
 	}
 }
 
-void SnakeManager::Move() {
-	vector<int> head = { mySnake.GetHeadPositionX(),mySnake.GetHeadPositionY() };
-	snakeBodyPositions.insert(snakeBodyPositions.begin(), head);
-	snakeBodyPositions.pop_back();
-
-	mySnake.SetHeadPositionX(nextPosition[0]);
-	mySnake.SetHeadPositionY(nextPosition[1]);
-
-}
